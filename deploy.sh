@@ -1,6 +1,9 @@
-docker build -t farhansajid2/multi-client:latest -t farhansajid2/multi-client:$SHA  ./client
-docker build -t farhansajid2/multi-server:latest -t farhansajid2/multi-server:$SHA ./server
-docker build -t farhansajid2/multi-worker:latest -t farhansajid2/multi-worker:$SHA ./worker
+docker build -t farhansajid2/multi-client:latest -f ./client/Dockerfile ./client
+docker build -t farhansajid2/multi-client:$SHA -f ./client/Dockerfile ./client
+docker build -t farhansajid2/multi-server:latest -f ./server/Dockerfile ./server/
+docker build -t farhansajid2/multi-server:$SHA -f ./server/Dockerfile ./server/
+docker build -t farhansajid2/multi-worker:latest -f ./worker/Dockerfile ./worker
+docker build -t farhansajid2/multi-worker:$SHA -f ./worker/Dockerfile ./worker/
 
 docker push farhansajid2/multi-client:latest
 docker push farhansajid2/multi-client:$SHA
