@@ -18,8 +18,6 @@ spec:
       containers:
         - name: worker
           image: farhansajid2/multi-worker
-          ports:
-            - containerPort: 3000
           env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service
