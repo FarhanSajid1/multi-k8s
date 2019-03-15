@@ -18,7 +18,7 @@ before_install:
   - gcloud auth activate-service-account --key-file service-account.json
   - gcloud config set project mythical-plate-234503
   - gcloud config set compute/zone us-east1-b
-  - gcloud config set clusters get-credentials mutl-k8s
+  - gcloud container set clusters get-credentials mutl-k8s
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t farhansajid2/react-test -f ./client/Dockerfile.dev ./client
 
