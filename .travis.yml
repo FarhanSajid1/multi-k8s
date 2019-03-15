@@ -14,10 +14,10 @@ before_install:
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
-  - gcloud auth activate-service-acount --key-file service-account.json
+  - gcloud auth activate-service-account --key-file service-account.json
   - gcloud config set project mythical-plate-234503
   - gcloud config set compute/zone us-east1-b
-  - gcloud config set cluster get-credentials mutl-k8s
+  - gcloud config set clusters get-credentials mutl-k8s
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t farhansajid2/react-test -f ./client/Dockerfile.dev ./client
 
